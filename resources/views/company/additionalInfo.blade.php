@@ -185,10 +185,10 @@
 																		<td>    الرقم الثابت  </td>
 																		<td>{{$company->fixed_phone}}</td>
 																	</tr>
-																	<!-- <tr>
-																		<td>    رقم الفاكس  </td>
-																		<td>{{$company->fax_phone}}</td>
-																	</tr> -->
+																	<tr>
+																		<td>    رقم الموبايل  </td>
+																		<td>{{$company->mobile}}</td>
+																	</tr>
 																	<tr>
 																		<td>    البريد الالكتروني </td>
 																		<td>{{$company->email}}</td>

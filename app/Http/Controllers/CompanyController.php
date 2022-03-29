@@ -59,6 +59,7 @@ class CompanyController extends Controller
         
         $company->email=$Request->email;
         $company->fixed_phone=$Request->fixed_phone;
+        // $company->mobile=$Request->mobile;
         // $company->fax_phone=$Request->fax_phone;
         // $company->location=$Request->location;
         $company->cci_id=$Request->city;
@@ -135,7 +136,7 @@ class CompanyController extends Controller
             $company->company_name = $Request->input("company_name");
             $company->email= $Request->input("email");
             $company->fixed_phone= $Request->input("fixed_phone");
-            // $company->fax_phone = $Request->input("fax_phone");
+            $company->mobile = $Request->input("mobile");
             $company->cci_id = $Request->input('city');
             $company->act_id = $Request->input('activity');
               // $company->location= $Request->input("location");

@@ -18,6 +18,7 @@ class CreateCompaniesTable extends Migration
             $table->string('company_name');
             $table->string('email');
             $table->integer('fixed_phone');
+            $table->string('mobile')->unique();
             // $table->integer('fax_phone');
             // $table->string('location');
             // $table->string('company_specialist');

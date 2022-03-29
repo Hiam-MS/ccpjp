@@ -98,11 +98,11 @@
                 <option value="desc">DESC</option>
               </select>
             </div>
-            <div class="col-sm-2 col-xs-6 mt-2">
-              <button type="submit" class="btn btn-primary searchFreelancer w-100">بحث</button>
+            <div class="col-sm-1 col-xs-6 mt-2">
+              <button type="submit" class="btn btn-primary searchFreelancer ">بحث</button>
             </div>
-            <div class="col-sm-2 col-xs-6 mt-2">
-              <form action=""><input type="button" value="رجوع" onclick="history.back()" class="btn btn-primary w-100" ></form>
+            <div class="col-sm-1 col-xs-6 mt-2">
+              <form action=""><input type="button" value="رجوع" onclick="history.back()" class="btn btn-primary " ></form>
             </div>
           </div>
         </form>

@@ -204,8 +204,8 @@
 
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label>  رقم الفاكس <span style="color:red">*</span></label>
-												<input type="text" class="form-control  form-control-lg" placeholder=" " name="fax_phone" value="{{old('fax_phone')}} "  data-parsly-trigger="keyup">
+												<label>  رقم الموبايل <span style="color:red">*</span></label>
+												<input type="text" class="form-control  form-control-lg" placeholder=" " name="mobile" value="{{auth()->user()->mobile}} "  data-parsly-trigger="keyup" readonly>
 												@if($errors->any('fax_phone'))
 													<span >{{$errors->first('fax_phone')}}</span>
 												@endif

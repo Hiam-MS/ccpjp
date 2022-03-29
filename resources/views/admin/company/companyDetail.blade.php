@@ -122,12 +122,12 @@ label{
                                         <input type="text" class="form-control" placeholder="" name="fixed_phone"  value ="{{$company->fixed_phone}}" data-parsly-trigger="keyup">
                                     </div>
                                 </div>
-                                <!-- <div class="col-sm-4 col-xs-12 mt-2">
+                                <div class="col-sm-4 col-xs-12 mt-2">
                                     <div class="form-group">
-                                        <label for="">رقم الفاكس</label>
-                                        <input type="text" class="form-control" placeholder="" name="fax_phone"  value ="{{$company->fax_phone}}" data-parsly-trigger="keyup">
+                                        <label for="">رقم الموبايل</label>
+                                        <input type="text" class="form-control" placeholder="" name="mobile"  value ="{{$company->mobile}}" data-parsly-trigger="keyup">
                                     </div>
-                                </div> -->
+                                </div>
                                 <div class="col-sm-4 col-xs-12 mt-2">
                                     <div class="form-group">
                                         <label for="">البريد الالكتروني</label>

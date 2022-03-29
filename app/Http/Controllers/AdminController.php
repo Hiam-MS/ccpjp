@@ -107,7 +107,7 @@ class AdminController extends Controller
                             ->orWhere('role', 'd');})
                             ->orderBy('created_at', 'desc')
                             ->paginate(10);
-                    $comDetail=Company::where('company_name','LIKE','%'.$comName.'%')
+                    $comDetail=Company::where('company_name','LIKE','%'.$comName.'%')->orWhere('mobile', 'LIKE','%'.$comName.'%')
                         ->paginate(10);
                         return view ('admin.showCompany',compact('companies','comDetail'));
                 }
@@ -260,6 +260,7 @@ class AdminController extends Controller
     public function updateCompanyDetail(Request $Request)
     {
         if(Auth()->user()->role == 'a'){
+            
             $id = $Request->id;
             $companies=Company::find($id);
 
@@ -269,7 +270,7 @@ class AdminController extends Controller
             $companies->company_name=$Request->company_name;
             $companies->email=$Request->email;
             $companies->fixed_phone=$Request->fixed_phone;
-            // $companies->fax_phone=$Request->fax_phone;
+            $companies->mobile=$Request->mobile;
             $companies->cci_id=$Request->city;
             $companies->act_id=$Request->activity;
             // $companies->industria_record=$Request->industria_record;
