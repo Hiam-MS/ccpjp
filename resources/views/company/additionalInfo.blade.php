@@ -149,13 +149,13 @@
 															<span class="bs-stepper-label">المعلومات الأساسية</span>
 														</button>
 													</div>
-													<div class="line"></div>
+													<!-- <div class="line"></div>
 														<div class="step" data-target="#information-part">
 															<button type="button" class="step-trigger" role="tab" aria-controls="information-part" id="information-part-trigger">
 																<span class="bs-stepper-circle">3</span>
 																<span class="bs-stepper-label">المعلومات الاضافية </span>
 															</button>
-														</div>
+														</div> -->
 													</div>
 													<div class="bs-stepper-content">
 														<div id="view-part" class="content" role="tabpanel" aria-labelledby="view-part-trigger">
@@ -185,26 +185,26 @@
 																		<td>    الرقم الثابت  </td>
 																		<td>{{$company->fixed_phone}}</td>
 																	</tr>
-																	<tr>
+																	<!-- <tr>
 																		<td>    رقم الفاكس  </td>
 																		<td>{{$company->fax_phone}}</td>
-																	</tr>
+																	</tr> -->
 																	<tr>
 																		<td>    البريد الالكتروني </td>
 																		<td>{{$company->email}}</td>
 																	</tr>
-																	<tr>
+																	<!-- <tr>
 																		<td>  السجل التجاري </td>
 																		<td>{{$company->commercial_record}}</td>
-																	</tr>
-																	<tr>
+																	</tr> -->
+																	<!-- <tr>
 																		<td>   السجل الصناعي </td>
 																		<td>{{$company->industria_record}}</td>
 																	</tr>
 																	<tr>
 																		<td>  موقع الانترنت </td>
 																		<td>{{$company->website}}</td>
-																	</tr>
+																	</tr> -->
 																	<tr>
 																		<td><form><input type="button" value="رجوع" onclick="history.back()" class="btn btn-primary"></form></td>
 																		<td><form><input type="button" value="التالي" onclick="stepper.next()" class="btn btn-primary"></form></td>
@@ -271,7 +271,7 @@
 
 																<div class="row">
 																	
-																	<div class="col-sm-6">
+																	<!-- <div class="col-sm-6">
 																		<div class="form-group">
 																			<label>  رقم الفاكس <span style="color:red">*</span></label>
 																			<input type="text" class="form-control  form-control-lg" placeholder=" 963-11-2222222+" name="fax_phone" value="{{$company->fax_phone}}"  data-parsly-trigger="keyup">
@@ -279,7 +279,7 @@
 																				<span >{{$errors->first('fax_phone')}}</span>
 																			@endif
 																		</div>
-																	</div>
+																	</div> -->
 
 
 																	<div class="col-sm-6">
@@ -299,7 +299,7 @@
 																	<tr>
 																		<td><form action=""><input type="button" value="السابق" onclick="stepper.previous()" class="btn btn-primary"></form></td>
 																		<td><button class="btn btn-primary" >حفظ</button></td>
-																		<td><form><input type="button" value="التالي" onclick="stepper.next()" class="btn btn-primary"></form></td>
+																		<!-- <td><form><input type="button" value="التالي" onclick="stepper.next()" class="btn btn-primary"></form></td> -->
 																	</tr>
 																</table>
 															</form>
@@ -309,21 +309,21 @@
 															<form action="{{route('edititing2')}}" method="POST">
                                    								@csrf
 																@method('PUT')
-																<div class="form-group">
+																<!-- <div class="form-group">
 																	<label> السجل التجاري</label>
 																	<input type="text" value ="{{$company->commercial_record}}" name="commercial_record"  id="commercial_record" class="form-control"> 
 																	<span style="color:red"> @error('fixed_phone'){{$message}}@enderror</span>
-																</div>
-																<div class="form-group">
+																</div> -->
+																<!-- <div class="form-group">
 																	<label>  السجل الصناعي</label>
 																	<input type="text" value ="{{$company->industria_record}}" name="industria_record"  id="industria_record" class="form-control">  
 																	<span style="color:red"> @error('Current_address'){{$message}}@enderror</span>
-																</div>
-																<div class="form-group">
+																</div> -->
+																<!-- <div class="form-group">
 																	<label>  الموقع الالكتروني للشركة</label>
 																	<input type="text" value ="{{$company->website}}" name="website"  id="website" class="form-control"> 
 																	<span style="color:red"> @error('email'){{$message}}@enderror</span>
-																</div>
+																</div> -->
 																<table>
 																<tr>
 																	<p style="font-size:18px; color:red">ملاحظة :عند الانتهاء من تعبئة الحقول يجب الضغط على زر الحفظ</p>

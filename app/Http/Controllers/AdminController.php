@@ -95,26 +95,45 @@ class AdminController extends Controller
 
     }
 
-    public function showCompany()
+    public function showCompany(Request $request)
     {
         if(Auth()->user()->role == 'a'){
-            $companies=User::where(function ($query) {
-                $query->where('role', 'c')
-                      ->orWhere('role', 'd');
-                    })
-        ->orderBy('created_at', 'desc')
-        ->paginate(10);
-        $comDetail=Company::orderBy('created_at', 'desc')
-        ->paginate(10);
-        
- 
-            return view ('admin.showCompany',compact('companies','comDetail'));
+
+            $comName=$request->input('comName');
+
+            if($request->has('comName')){
+                $companies=User::where(function ($query) {
+                    $query->where('role', 'c')
+                            ->orWhere('role', 'd');})
+                            ->orderBy('created_at', 'desc')
+                            ->paginate(10);
+                    $comDetail=Company::where('company_name','LIKE','%'.$comName.'%')
+                        ->paginate(10);
+                        return view ('admin.showCompany',compact('companies','comDetail'));
+                }
+            else{
+                $companies=User::where(function ($query) {
+                    $query->where('role', 'c')
+                          ->orWhere('role', 'd');
+                        })
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
+            $comDetail=Company::orderBy('created_at', 'desc')
+            ->paginate(10);
+            
+     
+                return view ('admin.showCompany',compact('companies','comDetail'));
+            }
+
+
+           
         }
         else{
             abort(403);
         }
         
     }
+ 
     public function BanCompany(Request $request){
 
         $id = $request->id;
@@ -250,15 +269,15 @@ class AdminController extends Controller
             $companies->company_name=$Request->company_name;
             $companies->email=$Request->email;
             $companies->fixed_phone=$Request->fixed_phone;
-            $companies->fax_phone=$Request->fax_phone;
+            // $companies->fax_phone=$Request->fax_phone;
             $companies->cci_id=$Request->city;
             $companies->act_id=$Request->activity;
-            $companies->industria_record=$Request->industria_record;
-            $companies->commercial_record=$Request->commercial_record;
-            $companies->website=$Request->website;
+            // $companies->industria_record=$Request->industria_record;
+            // $companies->commercial_record=$Request->commercial_record;
+            // $companies->website=$Request->website;
            
             $companies->save();
-            return back()->withInput();
+            return back()->withInput()->with('success','  Successfull Update');
         }
         else{
             abort(403);

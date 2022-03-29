@@ -59,7 +59,7 @@ class CompanyController extends Controller
         
         $company->email=$Request->email;
         $company->fixed_phone=$Request->fixed_phone;
-        $company->fax_phone=$Request->fax_phone;
+        // $company->fax_phone=$Request->fax_phone;
         // $company->location=$Request->location;
         $company->cci_id=$Request->city;
         $company->act_id=$Request->activity;
@@ -81,9 +81,9 @@ class CompanyController extends Controller
         
 
         $company = auth()->user()->GetCompany;
-        $company->commercial_record=$Request->input("commercial_record");
-        $company->industria_record=$Request->input("industria_record");
-        $company->website=$Request->input("website");
+        // $company->commercial_record=$Request->input("commercial_record");
+        // $company->industria_record=$Request->input("industria_record");
+        // $company->website=$Request->input("website");
         $company->user_id= auth()->user()->id;
         if($company)
         {
@@ -108,7 +108,7 @@ class CompanyController extends Controller
             'company_name'=>'required|',
             'email'=>'required|email',
             'fixed_phone'=>'required|numeric',
-            'fax_phone'=>'required|numeric',
+            // 'fax_phone'=>'required|numeric',
             // 'location'=>'required',
             
             // 'commercial_record'=>'required|alpha_num|',
@@ -120,7 +120,7 @@ class CompanyController extends Controller
             'company_name.required'=>'بجب ادخال الاسم بالعربي',
             'email.required'=>'بجب ادخال البريد الالكتروني للشركة  ',
             'fixed_phone.required'=>'بجب ادخال رقم الهاتف الأرضي ',
-            'fax_phone.required'=>'بجب ادخال رقم  الفاكس ',
+            // 'fax_phone.required'=>'بجب ادخال رقم  الفاكس ',
             // 'location.required'=>'بجب ادخال عنوان الشركة   ',
             
             // 'commercial_record.required'=>'بجب ادخال  السجل التجاري ',
@@ -135,7 +135,7 @@ class CompanyController extends Controller
             $company->company_name = $Request->input("company_name");
             $company->email= $Request->input("email");
             $company->fixed_phone= $Request->input("fixed_phone");
-            $company->fax_phone = $Request->input("fax_phone");
+            // $company->fax_phone = $Request->input("fax_phone");
             $company->cci_id = $Request->input('city');
             $company->act_id = $Request->input('activity');
               // $company->location= $Request->input("location");

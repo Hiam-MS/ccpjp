@@ -18,12 +18,12 @@ class CreateCompaniesTable extends Migration
             $table->string('company_name');
             $table->string('email');
             $table->integer('fixed_phone');
-            $table->integer('fax_phone');
+            // $table->integer('fax_phone');
             // $table->string('location');
             // $table->string('company_specialist');
-            $table->string('commercial_record')->nullable();
-            $table->string('industria_record')->nullable();
-            $table->string('website')->nullable();
+            // $table->string('commercial_record')->nullable();
+            // $table->string('industria_record')->nullable();
+            // $table->string('website')->nullable();
             $table->unsignedBigInteger('user_id')->unique();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('cci_id');

@@ -159,6 +159,13 @@
                     </div>
                     <div class="col-sm-3 col-xs-6 mt-2">
                         <div class="form-group">
+                            <label for="">خبرات العمل</label>
+                            <input type="text" class="form-control" placeholder="" name="exp" id="searchFreelancer">
+
+                        </div>
+                    </div>
+                    <div class="col-sm-2 col-xs-6 mt-2">
+                        <div class="form-group">
                             <label for="">مكان الاقامة</label>
                             <select name="city" id="city" class="select2bs4 form-control form-control-lg">
                                 <option value=""></option>
@@ -168,7 +175,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-sm-2 col-xs-6 mt-2">
+                    <!-- <div class="col-sm-2 col-xs-6 mt-2">
                         <div class="form-group">
                             <label for="">الجنس</label>
                             <select name="gender" class="select2bs4 form-control form-control-lg">
@@ -178,7 +185,7 @@
 
                             </select>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="col-sm-2 col-xs-6 mt-2">
                         <label for=""></label>

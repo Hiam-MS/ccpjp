@@ -122,12 +122,12 @@ label{
                                         <input type="text" class="form-control" placeholder="" name="fixed_phone"  value ="{{$company->fixed_phone}}" data-parsly-trigger="keyup">
                                     </div>
                                 </div>
-                                <div class="col-sm-4 col-xs-12 mt-2">
+                                <!-- <div class="col-sm-4 col-xs-12 mt-2">
                                     <div class="form-group">
                                         <label for="">رقم الفاكس</label>
                                         <input type="text" class="form-control" placeholder="" name="fax_phone"  value ="{{$company->fax_phone}}" data-parsly-trigger="keyup">
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="col-sm-4 col-xs-12 mt-2">
                                     <div class="form-group">
                                         <label for="">البريد الالكتروني</label>
@@ -136,24 +136,24 @@ label{
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-sm-4 col-xs-12 mt-2">
+                                <!-- <div class="col-sm-4 col-xs-12 mt-2">
                                     <div class="form-group">
                                         <label for="">السجل التجاري</label>
                                         <input type="text" class="form-control" placeholder="" name="commercial_record"  value ="{{$company->commercial_record}}" data-parsly-trigger="keyup">
                                     </div>
-                                </div>
-                                <div class="col-sm-4 col-xs-12 mt-2">
+                                </div> -->
+                                <!-- <div class="col-sm-4 col-xs-12 mt-2">
                                     <div class="form-group">
                                         <label for="">السجل الصناعي</label>
                                         <input type="text" class="form-control" placeholder="" name="industria_record"  value ="{{$company->industria_record}}" data-parsly-trigger="keyup">
                                     </div>
-                                </div>
-                                <div class="col-sm-4 col-xs-12 mt-2">
+                                </div> -->
+                                <!-- <div class="col-sm-4 col-xs-12 mt-2">
                                     <div class="form-group">
                                         <label for="">موقع الانترنت</label>
                                         <input type="text" class="form-control" placeholder="" name="website"  value ="{{$company->website}}" data-parsly-trigger="keyup">
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="row">
                                 <div class="col-sm-3 col-xs-6 mt-2">
