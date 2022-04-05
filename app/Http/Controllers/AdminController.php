@@ -100,7 +100,8 @@ class AdminController extends Controller
         if(Auth()->user()->role == 'a'){
 
             $comName=$request->input('comName');
-
+            $activities=CompanyActivity::all();
+            $cities=City::all();
             if($request->has('comName')){
                 $companies=User::where(function ($query) {
                     $query->where('role', 'c')
@@ -109,8 +110,18 @@ class AdminController extends Controller
                             ->paginate(10);
                     $comDetail=Company::where('company_name','LIKE','%'.$comName.'%')->orWhere('mobile', 'LIKE','%'.$comName.'%')
                         ->paginate(10);
-                        return view ('admin.showCompany',compact('companies','comDetail'));
+                        return view ('admin.showCompany',compact('companies','comDetail','activities','cities'));
                 }
+                if($request->has('city')){
+                    $companies=User::where(function ($query) {
+                        $query->where('role', 'c')
+                                ->orWhere('role', 'd');})
+                                ->orderBy('created_at', 'desc')
+                                ->paginate(10);
+                        $comDetail=Company::where('company_name','LIKE','%'.$comName.'%')->orWhere('mobile', 'LIKE','%'.$comName.'%')
+                            ->paginate(10);
+                            return view ('admin.showCompany',compact('companies','comDetail','activities','cities'));
+                    }
             else{
                 $companies=User::where(function ($query) {
                     $query->where('role', 'c')
@@ -122,7 +133,7 @@ class AdminController extends Controller
             ->paginate(10);
             
      
-                return view ('admin.showCompany',compact('companies','comDetail'));
+                return view ('admin.showCompany',compact('companies','comDetail','activities','cities'));
             }
 
 

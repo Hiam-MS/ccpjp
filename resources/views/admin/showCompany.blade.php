@@ -61,7 +61,14 @@
 				</ul>
 			</div>
 		@endif
-      
+    <script>
+    $(function () {
+      $('.select2').select2()
+	  $('.select2bs4').select2({
+      theme: 'bootstrap4'
+    })
+    });
+</script>   
 <div class="col-md-10  my-5">
    <h2 class="h2 text-primary">إدارة الشركات</h2><br>
    @if(Session::get('success'))
@@ -80,28 +87,34 @@
           <div class="row">
             <div class="col-sm-3 col-xs-12 mt-2">
               <div class="form-group">
+                <label for="">البحث عن الاسم او رقم الموبايل</label>
                 <input type="text" class="form-control" placeholder="" name="comName" id="searchFreelancer">
               </div>
             </div>
             <div class="col-sm-3 col-xs-6 mt-2">
-              <select class="form-control" id="filterFreelancer">
-                <option selected disabled>فلترة حسب</option>
-                <option value="name">Name</option>
-                <option value="email">Email</option>
-                <option value="created_at">Date Registered</option>
+              <label for="" > فلترة حسب اختصاص العمل</label>
+              <select name ="activity" id="activity" class="select2bs4 form-control " >
+                <option value=""></option>
+                  @foreach($activities as $activity)
+                    <option value="{{$activity->act_id}}">{{$activity->activity_name}}</option>
+                  @endforeach
               </select>
             </div>
-            <div class="col-sm-2 col-xs-6 mt-2">
-              <select class="form-control" id="sortFreelancer">
-                <option selected disabled>فرز حسب</option>
-                <option value="asc">ASC</option>
-                <option value="desc">DESC</option>
-              </select>
+            <div class="col-sm-3   col-xs-6 mt-2">
+              <label for="">فلترة حسب المكان </label>
+              <select name ="city" id="city" class="select2bs4 form-control " >
+                <option value=""></option>
+                @foreach($cities as $city)
+                  <option value="{{$city->city_name}}">{{$city->city_name}}</option>
+                @endforeach
+			        </select>
             </div>
             <div class="col-sm-1 col-xs-6 mt-2">
+              <label for=""></label>
               <button type="submit" class="btn btn-primary searchFreelancer ">بحث</button>
             </div>
             <div class="col-sm-1 col-xs-6 mt-2">
+              <label for=""></label>
               <form action=""><input type="button" value="رجوع" onclick="history.back()" class="btn btn-primary " ></form>
             </div>
           </div>
@@ -125,7 +138,6 @@
                         <td> <a href="{{route('showCompanyDetail',$com->id)}}">{{ $com->company_name}} </a> </td>
                         <td> {{ $com->Activity->activity_name }} </td>
                         <td> {{ $com->city->city_name }} </td>
-                        
                         <td> {{ $com->email}} </td>
                         <td> {{ $com->users->mobile}} </td>
                         <td><h4>

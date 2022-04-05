@@ -280,7 +280,7 @@ textarea.form-control{
 											<form action="{{url("/job/application/$job->id/store")}}" method="POST">
 												{{ csrf_field() }}
 												<input type="hidden" value="{{$job->id}}" name="job">
-												<button type="submit" class="btn btn-primary btn-block">تقدّم الآن</button>
+												<button type="submit" class="btn btn-primary btn-block" style="width:100%">تقدّم الآن</button>
 														
 											</form>
 										</div>
@@ -295,7 +295,7 @@ textarea.form-control{
 										<form action="{{url("/job/applyedToJob/$job->id")}}" method="">
 											{{ csrf_field() }}
 											<input type="hidden" value="{{$job->id}}" name="job">
-											<button id="viewApplyedJob" type="submit" class="btn btn-primary btn-block">عرض المتقدمين</button>
+											<button id="viewApplyedJob" type="submit" class="btn btn-primary btn-block w-100" >عرض المتقدمين</button>
 													
 										</form>
 									</div>

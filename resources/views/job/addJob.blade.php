@@ -120,7 +120,12 @@
 								<div class="col-sm-6">
 									<div class="form-group">
 										<label> مكان العمل <span>*</span></label>
-										<input type="text" name="city" value="{{$company->city_name}} " class="form-control form-control-lg"  readonly>
+										<!-- <input type="text" name="city" value="{{$company->city_name}} " class="form-control form-control-lg" > -->
+										<select class="select2bs4 form-control form-control-lg" name="city" id="city" style="width:100%;">
+																				@foreach ($cities as $city)
+																					<option  value="{{$city->city_name}}" {{$city->city_id =="$company->cci_id" ? 'selected' : ''}}>{{$city->city_name}}</option>
+																				@endforeach
+																			</select>
 										@if($errors->any('city'))
 										<span >{{$errors->first('city')}}</span>
 										@endif
